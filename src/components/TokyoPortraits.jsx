@@ -12,9 +12,9 @@ export default function TokyoPortraits() {
   useEffect(()=>{
     const fetchData = async () =>{
         const responseJson = await getPortraitImages();
-        setImagesList(responseJson.resources)
+        // setImagesList(responseJson.resources)
         setNextCursor(responseJson.next_cursor);
-        
+        responseJson?setImagesList(responseJson.resources):setImagesList(portraits);
     }
     fetchData();
   },[])
