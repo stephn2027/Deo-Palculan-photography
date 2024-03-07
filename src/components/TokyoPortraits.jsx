@@ -25,7 +25,7 @@ export default function TokyoPortraits() {
     setNextCursor(responseJson.next_cursor);
    };
 
-    const portraitImages = imageList!==[]?imageList.map(image=>image.url):portraits;
+    const portraitImages = imageList.map(image=>image.url);
 
   return (
     <section className="h-full min-h-[100vh] p-6 sm:py-8 lg:py-12 bg-[#b5b5b2]">
