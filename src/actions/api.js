@@ -7,6 +7,7 @@ export const getGroupImages = async (nextCursor) =>{
      }
     const response = await fetch(`${API_URL}/group?${params}`);
     const responseJson = response.json();
+    console.log(responseJson);
     return responseJson;
 }
 export const getEtcImages = async (nextCursor) =>{
