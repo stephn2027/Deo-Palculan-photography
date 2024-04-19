@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react';
 import { styled } from 'styled-components';
-import DpLogo from '../images/DP Logo black.png'
+import DpLogo from '../images/Untitled-1.png'
 const StyledHeader = styled.header `
   position: absolute;
   width: 100%;
@@ -65,7 +65,7 @@ export default function Header({ isMenuOpen, setIsMenuOpen }) {
       <div className="header__container">
         <div className="header__inner">
         <a href="/" >
-        <img src={DpLogo} alt="logo" className='object-scale-down h-6 sm:h-10 md:h-16 ' />
+        <img src={DpLogo} alt="logo" className='object-scale-down h-[6rem] w-[12rem] sm:h-[8rem] md:h-[10rem]' />
         </a>
        
           
