@@ -1,30 +1,33 @@
-import React, { useEffect, useState } from 'react';
-
+import React, { Suspense, useEffect, useState } from 'react';
+import Loading from './Loading';
 import SectionHeading from './SectionHeading';
-import { groupShots } from '../assets/works';
 import GalleryViewer from './GalleryViewer';
 
 import { getGroupImages } from '../actions/api';
+
 
 export default function GroupShots() {
    
   const [imageList, setImagesList] = useState([]);
   const [nextCursor,setNextCursor] = useState(null);
+  const [loading, setLoading] = useState(true);
   
   useEffect(()=>{
     const fetchData = async () =>{
         const responseJson = await getGroupImages();
         setImagesList(responseJson.resources)
         setNextCursor(responseJson.next_cursor);
-        console.log(responseJson.next_cursor)
+        setLoading(false);
     }
     fetchData();
   },[])
    
    const handleLoadMore = async ()=>{
+    setLoading(true);
     const responseJson = await getGroupImages(nextCursor);
     setImagesList(currentImageList=>[...currentImageList,...responseJson.resources,]);
     setNextCursor(responseJson.next_cursor);
+    setLoading(false);
    };
 
     const GroupImages = imageList.map(image=>image.url);
@@ -34,7 +37,12 @@ export default function GroupShots() {
       <div className='mt-28'>
       <SectionHeading>Group Shots</SectionHeading>
       </div>
-     <GalleryViewer images={GroupImages} handleLoadMore={handleLoadMore} nextCursor={nextCursor}/>
+      <Suspense fallback={<Loading/>}>
+      <GalleryViewer images={GroupImages} handleLoadMore={handleLoadMore} nextCursor={nextCursor}/>
+      </Suspense>
+      
+     
+     
       </div>
     
     </section>
