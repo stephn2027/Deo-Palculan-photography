@@ -1,6 +1,6 @@
 import image1 from '../images/menuItemsImage.jpg';
 import image2 from '../images/portrait.jpeg';
-import image3 from '../images/DSC00620.jpg';
+import image3 from '../images/menu-pic2.jpeg';
 import image4 from '../images/menuItemImage4.jpg';
 
  const projects = [
