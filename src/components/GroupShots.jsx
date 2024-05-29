@@ -1,10 +1,11 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import Loading from './Loading';
 import SectionHeading from './SectionHeading';
-import GalleryViewer from './GalleryViewer';
 
 import { getGroupImages } from '../actions/api';
+import { lazy } from 'react';
 
+const  GalleryViewer = lazy(() => import('./GalleryViewer'));
 
 export default function GroupShots() {
    
