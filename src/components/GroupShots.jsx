@@ -1,7 +1,6 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import Loading from './Loading';
 import SectionHeading from './SectionHeading';
-
 import { getGroupImages } from '../actions/api';
 import { lazy } from 'react';
 

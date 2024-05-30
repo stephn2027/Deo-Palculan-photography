@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ReactVisibilitySensor from 'react-visibility-sensor';
 import { FaTimes } from 'react-icons/fa';
+import LazyImage from './LazyImage';
 
 export default function GalleryViewer({ images, handleLoadMore, nextCursor }) {
-  useEffect(() => {
-    // Preload images
-    images.forEach((imageUrl, index) => {
-      const img = new Image();
-      img.src = imageUrl;
-    });
-  }, [images]);
 
   const [imagesShownArray, setImagesShownArray] = useState(
     Array(images.length).fill(false)
@@ -106,12 +100,7 @@ function GridGalleryCard({ imageUrl, show }) {
           <div className="md:block hidden absolute inset-0 bg-black opacity-70 rounded-xl"></div>
         </div>
 
-        <img
-          className="mx-auto object-center object-cover rounded-2xl cursor-pointer"
-          src={imageUrl}
-          alt=""
-          loading="lazy"
-        />
+        {show && <LazyImage src={imageUrl} alt="" />}
       </div>
     </>
   );
