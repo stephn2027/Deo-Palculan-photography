@@ -100,7 +100,7 @@ function GridGalleryCard({ imageUrl, show }) {
           <div className="md:block hidden absolute inset-0 bg-black opacity-70 rounded-xl"></div>
         </div>
 
-        {show && <LazyImage src={imageUrl} alt="" />}
+         <LazyImage src={imageUrl} alt="" />
       </div>
     </>
   );
