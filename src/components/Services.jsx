@@ -24,7 +24,7 @@ export default function Services() {
           <p
           
           className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2 max-w-3xl">
-          Capture Moments, Create Memories: Unforgettable Photography Services Made Just for You! Check Out Our Picture-Perfect Packages at Prices You'll Love.
+          Whether it's a surprise proposal, family holiday photos, or simple headshots, I am here to help.
           </p>
         </header>
 

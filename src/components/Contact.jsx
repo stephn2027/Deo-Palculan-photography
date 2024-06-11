@@ -46,10 +46,9 @@ export default function Contact() {
                   Beyond Pixels – We Capture Emotions.
                 </h1>
 
-                <p className="max-w-xl mt-6">
+                <p className="max-w-xl mt-6 leading-normal">
                   Feel free to reach out to us with any inquiries, bookings, or
-                  to discuss your specific photography needs. We look forward to
-                  the opportunity to collaborate with you and transform your
+                  to discuss your specific photography needs. We are excited to work with you and transform your
                   moments into unforgettable images. Contact us today, and let's
                   start capturing memories together!"
                 </p>

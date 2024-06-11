@@ -25,7 +25,7 @@ export const services = [
     ],
   },
   {
-    name: 'Event Photography',
+    name: 'Prenuptial',
     img: eventImage,
     text: [
       'Basic Package: - Includes 1-hour session, 40+ edited digital images.',
