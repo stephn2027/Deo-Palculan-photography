@@ -39,27 +39,19 @@ const Content = () => {
       viewport={{once:true}}
       >
         <p className="content__text--heading text-sm max-w-6xl text-start">
-          Welcome to our photography page, where we invite you to explore a
-          visual journey capturing the essence of moments frozen in time.
+          Welcome to our homepage! Feel free to explore and check out our galleries. You're 
+          in luck to have come across the page of a hobbyist photographer who's passionate about capturing
+          your milestone moments.
         </p>
         <p className="content__text--copy text-start">
-          From the subtle play of shadows to the vibrant burst of colors, each
-          photograph serves as a window into the soul of its subject. Join us as
-          we explore the world through the lens, seeking the extraordinary in
-          the ordinary and the poetry in the visual silence.
+        {/* From the gentle play of shadows to the lively burst of colors, each photo opens a window into its subject's soul. Join us as we explore the world through our camera lens, finding the extraordinary in everyday moments and the beauty in quiet scenes.
           <br />
           <br />
-          Feel the passion, see the details, and experience the world anew
-          through the power of imagery. Our photography page is more than a
-          showcase; it's an invitation to see, to feel, and to discover the
-          profound stories waiting to be unveiled with every click of the
+          Feel the passion, notice the details, and experience the world anew through our images. Our photography page is more than just a showcase; it's an invitation to see, feel, and uncover the profound stories each picture tells.
           shutter.
           <br />
-          <br />
-          Embark on this visual odyssey with us, where each photograph is a
-          chapter, and together, we'll weave a narrative that transcends time
-          and space. Welcome to a gallery of moments – a sanctuary for those who
-          find solace, joy, and inspiration in the art of photography.
+          <br /> */}
+         
         </p>
       </motion.div>
     </StyledContentSection>
