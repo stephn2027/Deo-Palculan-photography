@@ -34,7 +34,7 @@ export default function Services() {
       transition={{ ease: 'easeInOut', duration: 0.5 }}
       viewport={{once:true}}
         className="flex flex-wrap flex-row -mx-4 text-center mb-2">
-        {services.map((service,id)=><CardService key={id} serviceName={service.name} servicePrice={service.price} img={service.img} serviceText={service.details} />)}
+        {services.map((service,id)=><CardService key={id} serviceName={service.name} servicePrice={service.price} img={service.img} serviceDetails={service.details} />)}
           
         </motion.div>
       </div>
