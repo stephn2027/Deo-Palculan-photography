@@ -25,7 +25,7 @@ export default function AccordionServices({packageName,text}) {
             aria-expanded="true"
             aria-controls="collapseOne"
           >
-            {packageName}
+            <span className="font-bold">{packageName}</span>
             <span
               className={`${
                 show
