@@ -1,61 +1,80 @@
 import portraitImage from '../images/solo.jpg';
 import groupImage from '../images/groupRandom.jpeg';
 import eventImage from '../images/event.jpeg';
-import productImage from '../images/ride.jpeg';
-import othersImage from '../images/train.jpeg';
-import extrasImage from '../images/ladywaiting.jpeg';
+
 
 export const services = [
   {
-    name: 'Portrait Photography',
+    name: 'Portrait (Solo or Couple)',
     img: portraitImage,
-    text: [
-      'Basic Package: - Includes 1-hour session, 25+ edited digital images.',
-      'Standard Package: - Includes 2-hour session, 35+ edited digital images',
-      'Premium Package: - Includes 3-hour session, 50+ edited digital images',
+    details: [
+      {
+        packageName: '2 hours',
+        text: [
+          "<b>¥20,000</b> - 1 location", "50 edited, high resolution images + editorial shots", "<i>Photos delivered within 5-7 days</i>",
+        ],
+      },
+      {
+        packageName: '3 hours',
+        text: [
+          "<b>¥40,000</b> - 2 locations", "75 edited, high resolution images + editorial shots", "<i>Photos delivered within 5-7 days</i>",
+        ],
+      },
+      {
+        packageName: '4 hours',
+        text: [
+          "<b>¥60,000</b> - 3 locations", "100 edited, high resolution images + editorial shots.", "<i>Photos delivered within 5-7 days</i>",
+        ],
+      },
     ],
   },
   {
-    name: 'Family Photography / Group',
+    name: 'Family / Group',
     img: groupImage,
-    text: [
-      'Basic Package: - Includes 1-hour session, 30+ edited digital images.',
-      'Standard Package: - Includes 2-hour session, 40+ edited digital images',
-      'Premium Package:  - Includes 3-hour session, 60+ edited digital images',
+    details: [
+      {
+        packageName: '2 hours',
+        text: [
+          "<b>¥23,000</b> - 1 location", "50 edited, high resolution images + editorial shots", "<i>Photos delivered within 5-7 days</i>",
+        ],
+      },
+      {
+        packageName: '3 hours',
+        text: [
+          "<b>¥43,000</b> - 2 locations", "75 edited, high resolution images + editorial shots", "<i>Photos delivered within 5-7 days</i>",
+        ],
+      },
+      {
+        packageName: '4 hours',
+        text: [
+          "<b>¥63,000</b> - 3 locations", "100 edited, high resolution images + editorial shots", "<i>Photos delivered within 5-7 days</i>",
+        ],
+      },
     ],
   },
   {
-    name: 'Prenuptial',
+    name: 'Prenup',
     img: eventImage,
-    text: [
-      'Basic Package: - Includes 1-hour session, 40+ edited digital images.',
-      'Standard Package: - Includes 2-hour session, 60+ edited digital images',
-      'Premium Package: - Includes 3-hour session, 80+ edited digital images',
-    ],
-  },
-  {
-    name: 'Product Photography',
-    img: productImage,
-    text: [
-      'Basic Package: - Includes 1-hour session, 10+ edited digital images.',
-      'Standard Package: Includes 2-hour session, 20+ edited digital images',
-      'Premium Package: - Includes 3-hour session, 30+ edited digital images',
-    ],
-  },
-  {
-    name: 'Others',
-    img: othersImage,
-    text: [
-      'Please note that prices may vary depending on location, additional services requested, and any special requirements. Contact us for a personalized quote tailored to your specific needs.',
-      'Zoom consultation on location, costume and logistics available',
-    ],
-  },
-  {
-    name: 'Extras',
-    img: extrasImage,
-    text: [
-      'Additional Hour of Coverage: Extend your session beyond the standard package duration for an additional fee.',
-      'Additional Edited Images: Request more edited digital images beyond the package limit.',
+    details: [
+      {
+        packageName: '2 hours',
+        text: [
+          "<b>¥25,000</b> - 1 location", "50 edited, high resolution images + editorial shots", "<i>Photos delivered within 5-7 days</i>",
+        ],
+      },
+      {
+        packageName: '3 hours',
+        text: [
+          "<b>¥45,000</b> - 2 locations", "75 edited, high resolution images + editorial shots", "<i>Photos delivered within 5-7 days</i>",
+        ],
+      },
+      {
+        packageName: '4 hours',
+        text: [
+          "<b>¥65,000</b> - 3 locations", "100 edited, high resolution images + editorial shots", "<i>Photos delivered within 5-7 days</i>",
+        ],
+      },
     ],
   },
 ];
+

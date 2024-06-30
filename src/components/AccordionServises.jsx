@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { TECollapse } from "tw-elements-react";
 
-export default function AccordionServices({text}) {
+export default function AccordionServices({packageName,text}) {
   const [show, setShow] = useState(false);
 
   const toggleShow = () => {
@@ -25,7 +25,7 @@ export default function AccordionServices({text}) {
             aria-expanded="true"
             aria-controls="collapseOne"
           >
-            View Details
+            {packageName}
             <span
               className={`${
                 show
@@ -52,7 +52,7 @@ export default function AccordionServices({text}) {
         </h2>
         <TECollapse show={show} className="!mt-0 !shadow-none h-auto transition-all duration-500">
           <div className="px-10 pb-8 leading-[1.8rem] h-auto text-left my-4 transition-all duration-500">
-            {text.map((details,id)=><li key={id}>{details}</li>)}
+          {text.map((details,id)=><li key={id} dangerouslySetInnerHTML={{ __html: details }}></li>)}
           </div>
         </TECollapse>
       </div>

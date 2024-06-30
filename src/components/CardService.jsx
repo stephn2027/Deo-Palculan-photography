@@ -29,7 +29,9 @@ export default function CardService({
           {serviceName}
         </h3>
 
-        <AccordionServices text={serviceText} />
+        {serviceDetails.map(({ packageName, text, id }) => (
+          <AccordionServices text={text} packageName={packageName} key={id} />
+        ))}
       </div>
     </div>
   );
