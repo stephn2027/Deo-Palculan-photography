@@ -3,9 +3,8 @@ import AccordionServices from './AccordionServises';
 
 export default function CardService({
   serviceName,
-  serviceText,
+  serviceDetails,
   img,
-  servicePrice,
 }) {
   return (
     <div
