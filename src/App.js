@@ -12,7 +12,7 @@ import CoupleShots from './components/CoupleShots';
 import RandomShots from './components/RandomShots';
 import GroupShots from './components/GroupShots';
 import Services from './components/Services';
-
+import FaQs from './components/Faqs';
 
 
 const StyledMainWrapper = styled.div`
@@ -45,6 +45,7 @@ function App() {
           <Route path="random" element={<RandomShots />} />
           <Route path="groupshots" element={<GroupShots />} />
           <Route path="works" element={<Works />} />
+          <Route path="faqs" element={<FaQs/>} />
           <Route path="contact" element={<Contact />} />
           <Route path="services" element={<Services />} />
           

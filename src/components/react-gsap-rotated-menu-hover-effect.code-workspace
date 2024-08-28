@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../react-gsap-rotated-menu-hover-effect"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Deo-Photography"
+	}
+}

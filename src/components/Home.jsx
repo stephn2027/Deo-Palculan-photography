@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import Contact from './Contact';
 import Content from './Content';
 import Loading from './Loading';
-
+import FaQs from './Faqs';
 import ProjectIntro from './ProjectIntro';
 import Services from './Services';
 import Works from './Works';
@@ -17,6 +17,7 @@ export default function Home() {
       <Content />
       <Works />
       <Services />
+      <FaQs/>
       <Contact />
     </div>
   );
