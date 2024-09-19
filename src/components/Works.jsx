@@ -1,8 +1,8 @@
 import React from 'react';
 import SectionHeading from './SectionHeading';
-import portraitImage from '../images/DSC02889.jpg';
+import portraitImage from '../images/works-tokyoportraits.jpg';
 import groupImage from '../images/groupImage.jpg';
-import coupleImage from '../images/coupletemple.jpeg';
+import coupleImage from '../images/works-couple.jpg';
 import randomImage from '../images/DSC09747.jpg';
 import { motion } from 'framer-motion';
 

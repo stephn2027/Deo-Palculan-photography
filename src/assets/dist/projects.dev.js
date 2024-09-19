@@ -13,6 +13,8 @@ var _menuPic = _interopRequireDefault(require("../images/menu-pic2.jpeg"));
 
 var _menuItemImage = _interopRequireDefault(require("../images/menuItemImage4.jpg"));
 
+var _hoverFaq = _interopRequireDefault(require("../images/hover-faq.jpg"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var projects = [{
@@ -35,6 +37,12 @@ var projects = [{
   link: 'services'
 }, {
   id: "04",
+  color: "#a4s1se",
+  image: _hoverFaq["default"],
+  name: "FAQs",
+  link: 'faqs'
+}, {
+  id: "05",
   color: "#b0aeac",
   image: _menuItemImage["default"],
   name: "Contact",

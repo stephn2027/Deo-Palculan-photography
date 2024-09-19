@@ -8,7 +8,7 @@
         {
             id: "faq2",
             question: "How do I book a photography session?",
-            answer: "You can book a session by visiting our Contact page and filling out the booking form, or you can message us on Facebook."
+            answer: "You can book a session by visiting our contact page and filling out the booking form, or you can message us on Facebook."
         },
         {
             id: "faq3",

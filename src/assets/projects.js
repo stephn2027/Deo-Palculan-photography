@@ -2,7 +2,7 @@ import image1 from '../images/menuItemsImage.jpg';
 import image2 from '../images/portrait.jpeg';
 import image3 from '../images/menu-pic2.jpeg';
 import image4 from '../images/menuItemImage4.jpg';
-import image5 from '../images/baghaei-photography-i7viNsvJa2c-unsplash.jpg'
+import image5 from '../images/hover-faq.jpg'
 
  const projects = [
     { id: "01", color: "#b5b5b2", image: image1, name: "Home" , link:'/' },

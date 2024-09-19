@@ -1,6 +1,6 @@
-import portraitImage from '../images/solo.jpg';
-import groupImage from '../images/groupRandom.jpeg';
-import eventImage from '../images/event.jpeg';
+import portraitImage from '../images/portrait.jpg';
+import groupImage from '../images/group.jpg';
+import eventImage from '../images/couple.jpg';
 
 
 export const services = [
