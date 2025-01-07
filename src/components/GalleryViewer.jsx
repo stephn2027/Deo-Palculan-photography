@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ReactVisibilitySensor from 'react-visibility-sensor';
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import LazyImage from './LazyImage';
 
 export default function GalleryViewer({ images, handleLoadMore, nextCursor }) {
-
   const [imagesShownArray, setImagesShownArray] = useState(
     Array(images.length).fill(false)
   );
@@ -32,6 +31,8 @@ export default function GalleryViewer({ images, handleLoadMore, nextCursor }) {
               <GridGalleryCard
                 imageUrl={imageUrl}
                 show={imagesShownArray[index]}
+                index={index}
+                images={images}
               />
             </ReactVisibilitySensor>
           ))}
@@ -50,36 +51,81 @@ export default function GalleryViewer({ images, handleLoadMore, nextCursor }) {
   );
 }
 
-function GridGalleryCard({ imageUrl, show }) {
+function GridGalleryCard({ imageUrl, show, index, images }) {
   const [model, setModel] = useState(false);
-  const [tempImageUrl, setTempImageUrl] = useState('');
+  const [currentImageIndex, setCurrentImageIndex] = useState(index);
 
-  const toggleModel = (imageUrl) => {
-    setTempImageUrl(imageUrl);
+  const toggleModel = (index) => {
+    setCurrentImageIndex(index);
     setModel(!model);
   };
 
-  useEffect(() => {
-    if (!model) {
-      // Reset image when modal is closed
-      setModel(false);
+  const handlePrevious = useCallback((e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  }, [images.length]);
+
+  const handleNext = useCallback((e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  }, [images.length]);
+
+  const handleKeyDown = useCallback((e) => {
+    if (model) {
+      if (e.key === 'ArrowLeft') {
+        handlePrevious(e);
+      } else if (e.key === 'ArrowRight') {
+        handleNext(e);
+      } else if (e.key === 'Escape') {
+        setModel(false);
+      }
     }
-  }, [model]);
+  }, [model, handlePrevious, handleNext]);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleKeyDown]);
 
   return (
     <>
       {model && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
           <div className="relative max-w-full mx-auto overflow-hidden rounded-lg shadow-xl">
-            <div
-              className="absolute top-0 right-0 my-6 md:my-10 lg:my-12 md:m-4 cursor-pointer"
+            <button
+              className="absolute top-0 right-0 my-6 md:my-10 lg:my-12 md:m-4 cursor-pointer z-50"
               onClick={() => setModel(false)}
+              aria-label="Close gallery"
             >
               <FaTimes className="text-white text-2xl md:text-4xl stroke-black stroke-[20px]" />
-            </div>
+            </button>
+
+            {/* Navigation Buttons */}
+            <button
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-3 hover:bg-opacity-75 transition-opacity rounded-r-lg z-50"
+              onClick={handlePrevious}
+              aria-label="Previous image"
+            >
+              <FaChevronLeft className="text-white text-2xl md:text-3xl" />
+            </button>
+
+            <button
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-3 hover:bg-opacity-75 transition-opacity rounded-l-lg z-50"
+              onClick={handleNext}
+              aria-label="Next image"
+            >
+              <FaChevronRight className="text-white text-2xl md:text-3xl" />
+            </button>
+
             <div className="max-h-[95vh]">
               <img
-                src={tempImageUrl}
+                src={images[currentImageIndex]}
                 alt=""
                 className="w-full h-[92vh] m-6 mx-auto md:max-h-[95vh] max-w-[92vw] object-contain"
                 loading="lazy"
@@ -89,7 +135,7 @@ function GridGalleryCard({ imageUrl, show }) {
         </div>
       )}
       <div
-        onClick={() => toggleModel(imageUrl)}
+        onClick={() => toggleModel(index)}
         className={`relative transition-all duration-[0.8s] h-auto w-full rounded-xl transform mb-6 ${
           show
             ? ''
@@ -100,7 +146,7 @@ function GridGalleryCard({ imageUrl, show }) {
           <div className="md:block hidden absolute inset-0 bg-black opacity-70 rounded-xl"></div>
         </div>
 
-         <LazyImage src={imageUrl} alt="" />
+        <LazyImage src={imageUrl} alt="" />
       </div>
     </>
   );
